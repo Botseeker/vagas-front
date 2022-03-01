@@ -1,10 +1,25 @@
 <template>
+
 <div>
-  <p>Conteúdo</p>
+  <h1>Componente Conteudo</h1>
+  <home></home>
+  <publicar-vaga></publicar-vaga>
 </div>
 </template>
 
 
-<script></script>
+<script>
+import Home from '../views/Home.vue'
+import PublicarVaga from '../views/PublicarVagas.vue'
+export default {
+  name: 'Conteudo-',
+  components: {
+    Home,
+    PublicarVaga
+  } 
+
+}
+
+</script>
 
 <style></style>

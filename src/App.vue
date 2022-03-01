@@ -1,31 +1,29 @@
 <template>
   <div>
-    <Topo />
-    <Conteudo></Conteudo>
-  </div>
+    <h1>Componente App</h1>
+    <topo-padrao /> 
+    <conteudo></conteudo>
+   </div>
 </template>
 
 <script>
-//Oraganizar ordem alfabetica
+//Oraganizar ordem alfabetica ou padrão
 import Conteudo from './components/layouts/Conteudo.vue'
-import Topo from './components/layouts/Topo.vue'
+import TopoPadrao from './components/layouts/TopoPadrao.vue'
+
+
 
 export default {
   name: 'App',
   components: {
-    Conteudo,
-    Topo
+    Conteudo: Conteudo,
+    TopoPadrao: TopoPadrao, 
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+h1 {
+  color: blue;
 }
 </style>

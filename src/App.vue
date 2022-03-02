@@ -8,8 +8,8 @@
 
 <script>
 //Oraganizar ordem alfabetica ou padrão
-import Conteudo from './components/layouts/Conteudo.vue'
-import TopoPadrao from './components/layouts/TopoPadrao.vue'
+import Conteudo from '@/components/layouts/Conteudo.vue'
+import TopoPadrao from '@/components/layouts/TopoPadrao.vue'
 
 
 
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style>
+<style module>
 h1 {
   color: blue;
 }

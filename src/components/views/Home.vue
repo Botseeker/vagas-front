@@ -2,6 +2,7 @@
 
 <div>
   <h1>Componente Home</h1>
+  <p>Home - Propriedade $style: {{$style}}</p>
 </div>
 </template>
 
@@ -14,4 +15,11 @@ export default {
 
 </script>
 
-<style></style>
+<style module>
+
+h1 {
+  color: purple;
+
+}
+
+</style>

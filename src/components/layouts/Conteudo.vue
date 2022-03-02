@@ -9,8 +9,8 @@
 
 
 <script>
-import Home from '../views/Home.vue'
-import PublicarVaga from '../views/PublicarVagas.vue'
+import Home from '@/components/views/Home.vue'
+import PublicarVaga from '@/components/views/PublicarVagas.vue'
 export default {
   name: 'Conteudo-',
   components: {
@@ -22,4 +22,8 @@ export default {
 
 </script>
 
-<style></style>
+<style module>
+h1 { 
+  color: green;
+}
+</style>

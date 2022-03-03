@@ -1,8 +1,9 @@
 <template>
   <div>
     <h1>Componente App</h1>
+    <button @click="desmontarComponente()">Desmontar_componente_conteúdo</button>
     <topo-padrao /> 
-    <conteudo></conteudo>
+    <conteudo v-if="visibilidade"></conteudo>
    </div>
 </template>
 
@@ -15,6 +16,14 @@ import TopoPadrao from '@/components/layouts/TopoPadrao.vue'
 
 export default {
   name: 'App',
+  data: () => ({
+    visibilidade: true
+  }),
+  methods: {
+    desmontarComponente(){
+      this.visibilidade = false
+    }
+  },
   components: {
     Conteudo: Conteudo,
     TopoPadrao: TopoPadrao, 
@@ -22,8 +31,6 @@ export default {
 }
 </script>
 
-<style module>
-h1 {
-  color: blue;
-}
+<style>
+
 </style>

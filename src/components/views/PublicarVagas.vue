@@ -1,7 +1,7 @@
 <template>
 
 <div>
-  <p>Publicar Vagas</p>
+ <h1>Componente Publicar vaga</h1>
 </div>
 </template>
 

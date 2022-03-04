@@ -2,64 +2,63 @@
   <div class="container py-4">
     <div class="row">
       <div class="col">
-        <div class="h-100 p-5 bg-light border rounded-3 ">
-          
-          <h2>Pesquisar Vagas</h2>
-          <div class="row">
-            <div class="col">
-              <div class="form-group">
-                <label>Título da vaga</label>
-                <input type="text" class="form-control" placeholder="Pesquisa palavra chave, ex: 'PHP', 'Pleno', 'Analista'">
-                <small class="form-text text-muted">Informe palavras que estejam relacionadas com o título da vaga que você procura</small>      
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col">
-              <button class="btn btn-outline-dark mt-2" type="button">Buscar</button>
-            </div>
-          </div>
+        <pesquisar-vaga></pesquisar-vaga>
+      </div>
+    </div>
+    <div>
+      <div class="row mt-5">
+        <div class="col-4">
+          <indicador titulo="Vagas abertas" indicador="100"
+           bg="bg-dark" color="text-white"></indicador>
         </div>
-
       </div>
-    </div>
 
-    <div class="row mt-5">
       <div class="col-4">
+        <indicador titulo="Profissionais cadastrados" indicador="225"
+         bg="bg-dark" color="text-white"></indicador>
+      </div>
+
+      <div class="col-4">
+        <indicador titulo="Visitantes online" indicador="25"
+         bg="bg-dark" color="text-white"></indicador>
       </div>
     </div>
-    
   </div>
 </template>
 
 
 <script>
+import PesquisarVaga from '@/components/comuns/PesquisarVaga.vue'
+import Indicador from '@/components/comuns/Indicador.vue'
+
+
 export default {
-  name: 'Home-',
+  
+  name: "Home-",
+  components: {
+    PesquisarVaga,
+    Indicador
+  },
   created() {
-    console.log('Criado')
+    console.log('Criado', this.teste);
   },
   activated() {
-    console.log('Activado')
+    console.log("Activado");
   },
   deactivated() {
-    console.log('desativado')
+    console.log("desativado");
   },
   beforeUnmount() {
-    console.log('Antes de desmontar')
+    console.log("Antes de desmontar");
   },
   unmounted() {
-    console.log('Desmontar')
+    console.log("Desmontar");
   },
-}
-
+};
 </script>
 
 <style module>
-
 h1 {
   color: purple;
-
 }
-
 </style>

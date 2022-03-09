@@ -9,14 +9,7 @@
 
     <div class="row mt-5" v-for="(vaga, index) in vagas" :key="index">
       <div class="col">
-        <vaga 
-          :titulo="vaga.titulo"
-          :descricao="vaga.descricao"
-          :salario="vaga.salario"
-          :modalidade="vaga.modalidade"
-          :tipo="vaga.tipo"
-          :publicacao="vaga.publicacao"
-        />
+        <vaga v-bind="vaga"  /> 
       </div>
     </div> 
 
@@ -80,6 +73,7 @@ export default {
           tipo: 'PJ',
           publicacao: '2021-10-10'
         },
+        
         {
           titulo: 'Programador JavaScript Angular',
           descricao: 'Profissional com conhecimentos avançados em JavaScript e Angular.',
@@ -112,6 +106,7 @@ export default {
           tipo: 'CLT',
           publicacao: '2021-10-05'
         }
+        
       ]
   }),
   methods: {

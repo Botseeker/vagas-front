@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h1>Componente App</h1>
-    <button @click="desmontarComponente()">Desmontar_componente_conteúdo</button>
-    <topo-padrao /> 
-    <conteudo v-if="visibilidade"></conteudo>
+    <vagas-favoritas></vagas-favoritas>
+    <topo-padrao @navegar="componente = $event" /> 
+    <conteudo v-if="visibilidade" :conteudo="componente"></conteudo>
    </div>
 </template>
 
@@ -11,23 +10,21 @@
 //Oraganizar ordem alfabetica ou padrão
 import Conteudo from '@/components/layouts/Conteudo.vue'
 import TopoPadrao from '@/components/layouts/TopoPadrao.vue'
+import VagasFavoritas from './components/comuns/VagasFavoritas.vue'
 
 
 
 export default {
   name: 'App',
   data: () => ({
-    visibilidade: true
+    visibilidade: true,
+    componente: 'Home'
   }),
-  methods: {
-    desmontarComponente(){
-      this.visibilidade = false
-    }
-  },
   components: {
     Conteudo: Conteudo,
-    TopoPadrao: TopoPadrao, 
-  }
+    TopoPadrao: TopoPadrao,
+    VagasFavoritas
+}
 }
 </script>
 

@@ -98,10 +98,25 @@ export default {
         publicacao: dataAtual.toISOString()
       })
 
-      //localStorage.setItem('vagas', JSON.stringify(vagas))
-      this.emitter.emit('alerta')
+      if(this.validaFormulario()) {
+        localStorage.setItem('vagas', JSON.stringify(vagas))
+        this.emitter.emit('alerta', {
+        tipo: 'sucesso',
+        titulo: `A vaga ${this.titulo} foi cadastrada com sucesso!`,
+        descricao: 'Vaga cadastrada, agora podera ser consultada por milhares de empresas.'
+      })
+        this.resetaFormularioCadastroVaga()
+        
+      }else {
+        this.emitter.emit('alerta', {
+        tipo: 'erro',
+        titulo: 'Você deve preencher os campos, mizera!,',
+        descricao: 'Ta lelé das ideia ? Preencher os campos !!!.'
+      })
+      }
+      
 
-      this.resetaFormularioCadastroVaga()
+      
     },
     resetaFormularioCadastroVaga(){
       this.titulo = '',
@@ -109,6 +124,17 @@ export default {
       this.salario = '',
       this.modalidade = '',
       this.tipo = ''
+    },
+    validaFormulario() {
+      let valido = true
+      
+      if(this.titulo === '') valido = false
+      if(this.descricao === '') valido = false
+      if(this.salario === '') valido = false
+      if(this.modalidade === '') valido = false
+      if(this.tipo === '') valido = false
+      
+      return valido
     }
 
 
